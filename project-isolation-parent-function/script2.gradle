@@ -1,0 +1,5 @@
+def testFunction() {
+  println("running script testFunction")
+}
+
+ext.testFunction = this.&testFunction

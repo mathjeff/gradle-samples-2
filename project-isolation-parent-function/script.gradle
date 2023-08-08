@@ -1,0 +1,2 @@
+project.apply(from: "${buildscript.sourceFile.parent}/script2.gradle")
+testFunction()
