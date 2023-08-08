@@ -1,0 +1,7 @@
+project.ext.sampleValue = "1"
+
+def violateProjectIsolation() {
+  println("child project sees root project dir = " + project.rootProject.buildDir)
+}
+
+project.ext.violateProjectIsolation = this.&violateProjectIsolation
