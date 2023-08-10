@@ -1,0 +1,19 @@
+buildscript {
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
+  }
+  repositories {
+    mavenCentral()
+  }
+}
+
+apply plugin: "java"
+if (project.hasProperty("buildSrcChildApplyKotlinPlugin"))
+  apply plugin: "kotlin"
+
+dependencies {
+  repositories {
+    mavenCentral()
+  }
+  implementation(gradleApi())
+}
