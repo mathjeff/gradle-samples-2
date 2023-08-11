@@ -1,0 +1,3 @@
+project.apply(plugin: sample.SamplePlugin)
+
+tasks["slowTask"].timeout.set(Duration.ofSeconds(4))
