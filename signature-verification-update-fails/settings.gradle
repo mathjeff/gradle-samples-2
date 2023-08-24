@@ -1,0 +1,3 @@
+rootProject.name = "androidx"
+
+includeBuild(new File(buildscript.sourceFile.parent, "included-build"))
