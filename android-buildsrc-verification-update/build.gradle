@@ -1,0 +1,25 @@
+buildscript {
+  dependencies {
+    classpath "com.android.tools.build:gradle:8.2.0-beta01"
+  }
+  repositories {
+    google()
+    mavenCentral()
+  }
+}
+
+repositories {
+  google()
+  mavenCentral()
+}
+
+project.apply(plugin: "com.android.library")
+
+configurations {
+  sampleConfiguration
+}
+
+android {
+  namespace "androidx.docs.publicdocs"
+  compileSdkVersion "android-33"
+}
