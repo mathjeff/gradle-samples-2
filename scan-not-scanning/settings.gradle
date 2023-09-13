@@ -1,0 +1,10 @@
+gradleEnterprise {
+  buildScan {
+    publishAlways()
+
+    if (providers.gradleProperty("publishIfAuthenticated").isPresent()) {
+      publishIfAuthenticated()
+    }
+  }
+}
+
