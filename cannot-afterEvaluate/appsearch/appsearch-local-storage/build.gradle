@@ -1,0 +1,12 @@
+configurations.create("bundleInside")
+
+dependencies {
+  bundleInside(project(":icing"))
+}
+
+tasks.register("resolveDependencies") { t ->
+  def numFiles = configurations["bundleInside"].resolvedConfiguration.files.size()
+  doLast {
+    println("numFiles = " + numFiles)
+  }
+}

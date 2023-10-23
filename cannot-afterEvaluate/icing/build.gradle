@@ -1,0 +1,4 @@
+apply(plugin: "java")
+afterEvaluate {
+  println("external:icing afterEvaluate")
+}
