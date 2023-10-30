@@ -4,11 +4,6 @@
       <verify-metadata>true</verify-metadata>
       <verify-signatures>true</verify-signatures>
       <key-servers enabled="false"/>
-      <ignored-keys>
-      </ignored-keys>
-      <trusted-keys>
-      </trusted-keys>
    </configuration>
-   <components>
-   </components>
+   <components/>
 </verification-metadata>
