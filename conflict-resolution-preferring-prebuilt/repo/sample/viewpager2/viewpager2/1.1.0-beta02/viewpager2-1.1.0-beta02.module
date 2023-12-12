@@ -1,0 +1,38 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "sample.viewpager2",
+    "module": "viewpager2",
+    "version": "1.1.0-beta02",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "viewpager2-1.1.0-beta02.aar",
+          "url": "viewpager2-1.1.0-beta02.aar",
+          "size": 67159,
+          "sha512": "b30c9cef131b8d263393dd33e9fdadac007c40c79f59b331db8a5b8e365090c5ceb60cb1d4e728fa75f3741b7c53a203b6fed5cf0ac853481c88df4d36ae4b9b",
+          "sha256": "bafac3ca991ed68a2c7ca6ff352966d200b12e66a342d10f497cb8168f59054a",
+          "sha1": "8382bf0f6d375711dfb5ae019e77960c22f8f893",
+          "md5": "1ec7669c1e269b7b50b14f3e718eab87"
+        }
+      ]
+    }
+  ]
+}
