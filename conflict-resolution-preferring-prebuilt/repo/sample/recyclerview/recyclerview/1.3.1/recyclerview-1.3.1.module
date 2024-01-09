@@ -16,12 +16,6 @@
   "variants": [
     {
       "name": "examplePublication",
-      "attributes": {
-        "org.gradle.category": "library",
-        "org.gradle.dependency.bundling": "external",
-        "org.gradle.libraryelements": "aar",
-        "org.gradle.usage": "java-runtime"
-      },
       "dependencyConstraints": [
         {
           "group": "sample.viewpager2",
