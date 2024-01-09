@@ -15,7 +15,7 @@
   },
   "variants": [
     {
-      "name": "releaseVariantReleaseRuntimePublication",
+      "name": "examplePublication",
       "attributes": {
         "org.gradle.category": "library",
         "org.gradle.dependency.bundling": "external",
