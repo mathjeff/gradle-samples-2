@@ -17,7 +17,7 @@ function dependsOnExternalModule() {
 
 separator="**********************************************************************************"
 echo "$separator"
-runGradle :viewpager2:viewpager2:dependencies -PoverrideVersion=1.1.0-beta03
+runGradle :viewpager2:viewpager2:dependencies -PoverrideVersion=1.1.0-beta03 --configuration debugUnitTestCompileClasspath
 echo "$separator"
 echoAndDo "grep --color 'sample.viewpager2:viewpager2:1.1.0-beta02' log" || true
 echo "$separator"
