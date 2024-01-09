@@ -19,7 +19,7 @@ separator="*********************************************************************
 echo "$separator"
 runGradle :viewpager2:viewpager2:dependencies -PoverrideVersion=1.1.0-beta03
 echo "$separator"
-echoAndDo "grep --color 'sample.viewpager2:viewpager2:1.1.0-beta02' log"
+echoAndDo "grep --color 'sample.viewpager2:viewpager2:1.1.0-beta02' log" || true
 echo "$separator"
 if dependsOnExternalModule; then
   echo "Notice above that when the project version is 1.1.0-beta03, after conflict resolution, the dependencies include the external module"
