@@ -1,0 +1,27 @@
+def numLookups = 1000
+def numTasks =   200000
+def doLookups = project.hasProperty("doLookups")
+def numTasksFoundInTaskGraph = 0
+
+def sampleTask = tasks.create("sample")
+for (def i = 0; i < numTasks; i++) {
+  def taskName = "sample" + i
+  sampleTask.dependsOn(tasks.create(taskName))
+}
+
+project.gradle.taskGraph.whenReady { taskGraph ->
+  for (def i = 0; i < numLookups; i++) {
+    def taskPath = ":sample" + i
+    if (doLookups) {
+      if (taskGraph.hasTask(taskPath)) {
+        numTasksFoundInTaskGraph++
+      }
+    }
+  }
+
+  if (doLookups) {
+    println("found " + numTasksFoundInTaskGraph + " tasks in task graph")
+  } else {
+    println("didn't call taskGraph.hasTask(String)")
+  }
+}
