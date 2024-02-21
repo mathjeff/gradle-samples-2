@@ -1,0 +1,20 @@
+buildscript {
+  project.ext.supportRootFolder = project.projectDir.getParentFile()
+  apply from: "repos.gradle"
+  repos.addMavenRepositories(repositories)
+
+  dependencies {
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
+  }
+}
+
+ext.supportRootFolder = project.projectDir.getParentFile()
+apply from: "repos.gradle"
+apply plugin: "kotlin"
+
+repos.addMavenRepositories(repositories)
+
+dependencies {
+  implementation("com.android.tools.build:gradle:8.2.0")
+  implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
+}

@@ -1,0 +1,7 @@
+plugins {
+  id("com.android.library")
+}
+android {
+  namespace "androidx.lifecycle.viewmodel.savedstate"
+  compileSdkVersion "android-34"
+}

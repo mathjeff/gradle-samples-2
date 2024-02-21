@@ -1,0 +1,25 @@
+pluginManagement {
+  repositories {
+    mavenCentral()
+    google()
+  }
+}
+
+buildscript {
+  ext.supportRootFolder = buildscript.sourceFile.getParentFile()
+  apply(from: "buildSrc/repos.gradle")
+
+  repos.addMavenRepositories(repositories)
+}
+
+getGradle().beforeProject {
+  repos.addMavenRepositories(it.repositories)
+}
+
+rootProject.name = "androidx"
+
+include(":compose:ui:ui")
+include(":lifecycle:lifecycle-livedata-core")
+include(":lifecycle:lifecycle-runtime")
+include(":lifecycle:lifecycle-viewmodel")
+include(":lifecycle:lifecycle-viewmodel-savedstate")

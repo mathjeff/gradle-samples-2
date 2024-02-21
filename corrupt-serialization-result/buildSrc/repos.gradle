@@ -1,0 +1,8 @@
+ext.repos = new Properties()
+
+def addMavenRepositories(RepositoryHandler handler) {
+  handler.mavenCentral()
+  handler.google()
+}
+
+ext.repos.addMavenRepositories = this.&addMavenRepositories

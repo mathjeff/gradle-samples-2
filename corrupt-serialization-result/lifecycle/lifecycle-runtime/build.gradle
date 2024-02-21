@@ -1,0 +1,25 @@
+plugins {
+  id("com.android.library")
+  id "org.jetbrains.kotlin.multiplatform"
+}
+kotlin {
+  android()
+}
+android {
+  namespace "androidx.lifecycle.runtime"
+  compileSdkVersion "android-34"
+}
+
+group = "lifecycle"
+
+configurations {
+  groupConstraints
+}
+project.configurations.configureEach { conf ->
+  if (conf != configurations.groupConstraints)
+    conf.extendsFrom(configurations.groupConstraints)
+}
+project.dependencies.constraints.add("groupConstraints", project(":lifecycle:lifecycle-livedata-core"))
+project.dependencies.constraints.add("groupConstraints", project(":lifecycle:lifecycle-viewmodel"))
+project.dependencies.constraints.add("groupConstraints", project(":lifecycle:lifecycle-viewmodel-savedstate"))
+
