@@ -1,0 +1,3 @@
+import example.SampleService
+
+def sampleService = project.gradle.sharedServices.registerIfAbsent("SampleService", SampleService.class).get()
