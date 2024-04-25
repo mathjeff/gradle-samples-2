@@ -1,0 +1,13 @@
+import org.gradle.api.attributes.Attribute
+
+def attrA = Attribute.of("attrA", String)
+configurations.create("conf1")
+configurations["conf1"].attributes.attribute(attrA, "value1")
+
+configurations.create("conf2")
+configurations["conf2"].attributes.attribute(attrA, "value2")
+
+dependencies {
+    "conf1" project.files("a")
+    "conf2" project.files("b")
+}

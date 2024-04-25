@@ -1,0 +1,18 @@
+import org.gradle.api.attributes.Attribute
+
+def attrA = Attribute.of("attrA", String)
+configurations.create("conf")
+configurations["conf"].attributes.attribute(attrA, "value1")
+
+dependencies {
+  if (project.ext.has("correctDependency")) {
+    "conf" project(":subproject1:child")
+  } else {
+    "conf" project(":subproject1")
+  }
+}
+
+tasks.create("copyDependencies", Sync) {
+    from(configurations["conf"])
+    into "build/resolved"
+}
