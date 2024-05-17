@@ -1,0 +1,14 @@
+import sample.ExampleTask;
+
+// This task exists to trigger Gradle to incorrectly determine the inputs of the task in project :a
+tasks.create("checkInputs", ExampleTask) {
+  if (project.hasProperty("projectBUsesParentDir")) {
+    def parentDir = "src/main/sample-resources"
+    println(path + " depends on " + parentDir + " to trigger Gradle to snapshot it first")
+    input1 = rootProject.files(parentDir)
+  } else {
+    input1 = rootProject.files("src/main/sample-resources/subdir3")
+  }
+  input2 = rootProject.files("src/main/sample-resources/subdir4")
+  outputFiles = rootProject.files("${buildDir}/out")
+}

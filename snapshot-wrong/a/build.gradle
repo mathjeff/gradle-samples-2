@@ -1,0 +1,13 @@
+import sample.ExampleTask;
+
+// This task is sometimes out-of-date when it shouldn't be
+tasks.create("checkInputs", ExampleTask) {
+  // Sometimes this file tree, which should have no files in it, is reported to have files in it
+  input1 = rootProject.files("src/main/sample-resources/subdir1").asFileTree.matching { filterSpec ->
+    filterSpec.include("missing.txt")
+  }
+
+  input2 = rootProject.files("src/main/sample-resources/subdir2")
+
+  outputFiles = project.files("${buildDir}/out")
+}
